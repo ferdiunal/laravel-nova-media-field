@@ -1,0 +1,10 @@
+{
+  "preset": "laravel",
+  "rules": {
+    "method_chaining_indentation": false,
+    "no_superfluous_phpdoc_tags": false,
+    "nullable_type_declaration_for_default_null_value": {
+      "use_nullable_type_declaration": false
+    }
+  }
+}

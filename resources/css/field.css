@@ -1,0 +1,50 @@
+@import '../js/lib/PhotoSwipe/photoswipe.css';
+
+/* Nova Field CSS */
+
+.media-active {
+  @apply hover:border-primary-600 border-primary-500;
+}
+
+.media-passive {
+  @apply hover:border-gray-400 dark:hover:border-gray-800 border-gray-200 dark:border-gray-700;
+}
+
+.fileList-container {
+  max-height: 40rem;
+  scroll-behavior: smooth;
+  scroll-snap-align: start;
+  scroll-snap-type: mandatory;
+  scroll-snap-stop: always;
+}
+.pswp__pdf-content,
+.pswp__img-content,
+.pswp__video-content,
+.pswp__audio-content {
+  @apply relative max-w-full;
+}
+.pswp__pdf-content iframe {
+  height: 100dvh;
+  @apply container mx-auto;
+}
+
+.pswp__video-content video {
+  height: 100dvh;
+  @apply container mx-auto w-auto;
+}
+
+.pswp__img-content img {
+  max-height: 100dvh;
+  @apply aspect-square object-contain;
+}
+.pswp__audio-content {
+  @apply flex items-center justify-center flex-col;
+  height: 100dvh;
+}
+.pswp__audio-content audio {
+  @apply max-w-sm mx-auto w-full;
+}
+
+.text-danger {
+  @apply text-red-500;
+}

@@ -1,0 +1,70 @@
+{
+    "name": "ferdiunal/laravel-nova-media-field",
+    "description": "A Laravel Nova media field for Spatie's media library",
+    "keywords": [
+        "laravel",
+        "nova",
+        "media",
+        "spatie",
+        "medialibrary",
+        "nova-media-field"
+    ],
+    "authors": [
+        {
+            "name": "Ferdi Ünal",
+            "email": "ferdiunal@outlook.com",
+            "homepage": "https://gitub.com/ferdiunal",
+            "role": "Developer"
+        }
+    ],
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/ferdiunal"
+        },
+        {
+            "type": "buymeacoffee",
+            "url": "https://buymeacoffee.com/ferdiunal"
+        }
+    ],
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^10.0|^11.0",
+        "laravel/nova": "^4.0",
+        "laravel/vapor-core": "^2.37",
+        "spatie/laravel-medialibrary": "^10.0|^11.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.16",
+        "spatie/laravel-ray": "^1.36"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ferdiunal\\NovaMediaField\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ferdiunal\\NovaMediaField\\NovaMediaFieldServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "pint": [
+            "./vendor/bin/pint"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
