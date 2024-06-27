@@ -1,16 +1,21 @@
-# Laravel Nova Media Field
+# Laravel Nova Media Field (WIP)
 
-## WIP (Work In Progress)
+**Laravel Nova Media Field** is a component designed to integrate seamlessly with Spatie's Media Library, allowing for efficient media file management within Laravel Nova. This package makes it easy to upload, list, and edit media files directly from your Nova dashboard.
 
-This package aims to provide a field for Laravel Nova that integrates with the Spatie Media Library. It is currently under development and will soon be updated with more features and documentation.
+## Features:
+- Easy media file upload
+- Previews and edits
+- Comprehensive media management
 
-### Install
+This component enhances the media management experience in Nova, offering a simple yet customizable solution for developers.
+
+## Install
 
 ```bash
 composer require ferdiunal/laravel-nova-media-field
 ```
 
-### Usage
+## Usage
 
 ```php
 /**
@@ -52,7 +57,7 @@ public function fields(NovaRequest $request)
 
 ```
 
-### Screenshots
+## Screenshots
 <img src="./pictures/SCR-20240627-mdrz.png" width="70%">
 <img src="./pictures/SCR-20240627-mdtu.png" width="70%">
 <img src="./pictures/SCR-20240627-mdxj.png" width="70%">
