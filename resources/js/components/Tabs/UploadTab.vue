@@ -15,13 +15,13 @@ const files = computed(() => state.value.files.filter(
 const setRemovableFile = (file) => window.NovaMedia.commit("upload", "setRemovableFile", file)
 </script>
 <template>
-    <div class="relative max-w-lg w-full mx-auto">
-        <div class="flex flex-row items-center justify-end pr-4 w-full pt-3.5" v-if="files.length">
+    <div class="ln-relative ln-max-w-lg ln-w-full ln-mx-auto">
+        <div class="ln-flex ln-flex-row ln-items-center ln-justify-end ln-pr-4 ln-w-full ln-pt-3.5" v-if="files.length">
             <tools />
         </div>
-        <div class="overflow-y-auto overflow-x-hidden h-auto p-4" v-if="files.length" style="max-height: 80dvh;">
+        <div class="ln-overflow-y-auto ln-overflow-x-hidden ln-h-auto ln-p-4 ln-max-h-[80dvh]" v-if="files.length">
             <previews-container :field="field" :files="files" />
-            <div class="grid grid-cols-4 gap-x-6 gap-y-4" v-if="false">
+            <div class="ln-grid grln-id-cols-4 ln-gap-x-6 ln-gap-y-4" v-if="false">
                 <template v-for="(file) in files" :key="key" v-if="false">
                     <div v-tooltip="{
                         content: file?.mediaId === undefined ? 'The file has not loaded yet' : '',
@@ -29,8 +29,7 @@ const setRemovableFile = (file) => window.NovaMedia.commit("upload", "setRemovab
                             show: 1,
                             hide: 0,
                         },
-                    }" :class="file?.mediaId === undefined ? 'filter grayscale' : ''"
-                        :style="file?.mediaId === undefined ? 'cursor: progress' : ''">
+                    }" :class="file?.mediaId === undefined ? 'ln-grayscale ln-cursor-progress' : ''">
                         <BlockPreview :file="file" :removable="shouldShowRemoveButton" :downloadable="false" @removed="() => {
                             setRemovableFile(file)
                             removableConfirmModal = true
@@ -41,7 +40,7 @@ const setRemovableFile = (file) => window.NovaMedia.commit("upload", "setRemovab
         </div>
 
         <!-- DropZone -->
-        <div class="max-w-lg w-full mx-auto mt-5">
+        <div class="ln-max-w-lg ln-w-full ln-mx-auto ln-mt-5">
             <upload-field :rounded="field.rounded" :field="field" :disabled="files?.some(file => file.processing)"
                 :dusk="`${field.attribute}-delete-link`" :input-dusk="field.attribute" />
         </div>

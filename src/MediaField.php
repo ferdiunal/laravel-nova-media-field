@@ -86,7 +86,7 @@ class MediaField extends File implements UpdatableContract
                         if ($collections->contains('id', '===', $mediaId)) {
                             $media = $model->media()->where('disk', $disk)->where('id', $mediaId)->first();
 
-                            if (! $media) {
+                            if (!$media) {
                                 return false;
                             }
 
@@ -161,7 +161,6 @@ class MediaField extends File implements UpdatableContract
     public function fill(NovaRequest $request, $model)
     {
         throw_unless($model instanceof HasMedia, new NovaMediaFieldException('Resource must be an instance of HasMedia'));
-
         $this->proccessingUploadedFiles($request, $model);
         $this->proccessingVaporFiles($request, $model);
     }
@@ -172,21 +171,21 @@ class MediaField extends File implements UpdatableContract
      */
     protected function proccessingUploadedFiles(NovaRequest $request, $model)
     {
-        // ray($request->file($this->attribute));
+        ray($request->file($this->attribute));
 
         $files = $request->file(
             $this->attribute,
             $request->get($this->attribute, null)
         );
 
-        if (empty($files) || ! is_array($files)) {
+        if (empty($files) || !is_array($files)) {
             return;
         }
 
         $collectionName = $this->collectionName ?? $this->attribute;
 
-        if (is_array($files) && ! empty($files)) {
-            if (! $this->multiple) {
+        if (is_array($files) && !empty($files)) {
+            if (!$this->multiple) {
                 $model->clearMediaCollection($collectionName);
             }
 
@@ -199,7 +198,7 @@ class MediaField extends File implements UpdatableContract
                             collectionName: $collectionName,
                             diskName: $this->disk
                         );
-                } elseif (is_array($file) && ! empty($file)) {
+                } elseif (is_array($file) && !empty($file)) {
                     if (isset($file['mediaId']) && isset($file['copy']) && $file['copy'] === 'true') {
                         $mediaLibraryModel = $this->model();
 
@@ -233,12 +232,12 @@ class MediaField extends File implements UpdatableContract
     {
         $vaporFiles = $request->get('vaporFiles', null);
 
-        if (empty($vaporFiles) || ! is_array($vaporFiles)) {
+        if (empty($vaporFiles) || !is_array($vaporFiles)) {
             return;
         }
 
         $collectionName = $this->collectionName ?? $this->attribute;
-        if (! $this->multiple) {
+        if (!$this->multiple) {
             $model->clearMediaCollection($collectionName);
         }
 

@@ -15,10 +15,10 @@ const value = computed({
 <template>
     <button type="button" @click.prevent.stop="value = 'grid'"
         v-tooltip="{ content: __('Grid View'), delay: { show: 1, hide: 0 } }"
-        class="cursor-pointer rounded text-sm font-bold inline-flex items-center justify-center focus:outline-none focus:ring border-2 w-6 h-6"
-        :class="value === 'grid' ? 'border-primary-300 dark:border-gray-500 hover:border-primary-500 active:border-primary-400 dark:hover:border-gray-400 dark:active:border-gray-300 ring-primary-200 dark:ring-gray-600' : 'border-transparent'">
+        class="ln-cursor-pointer ln-rounded ln-text-sm ln-font-bold ln-inline-flex ln-items-center ln-justify-center ln-focus:ln-outline-none ln-focus:ln-ring ln-border-2 ln-w-8 ln-p-1 ln-h-8"
+        :class="value === 'grid' ? 'ln-border-primary-300 ln-dark:border-gray-500 ln-hover:border-primary-500 ln-active:border-primary-400 ln-dark:hover:border-gray-400 ln-dark:active:border-gray-300 ln-ring-primary-200 ln-dark:ring-gray-600' : 'ln-border-transparent'">
         <svg class="w-3.5 h-3.5 fill-current"
-            :class="value === 'grid' ? 'text-primary-500 dark:text-gray-400' : 'text-gray-400 dark:text-gray-400'"
+            :class="value === 'grid' ? 'ln-text-primary-500 ln-dark:ln-text-gray-400' : 'ln-text-gray-400 ln-dark:ln-text-gray-400'"
             viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
             <g stroke="current" stroke-width="1" fill="current" fill-rule="evenodd" sketch:type="MSPage">

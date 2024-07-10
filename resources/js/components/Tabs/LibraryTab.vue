@@ -95,24 +95,25 @@ const onChoose = () => {
 
 </script>
 <template>
-    <div class="relative h-full">
-        <div class="mt-3 flex-1 px-4 sm:px-6" v-show="!mediaDetail">
-            <div class="mb-2 pr-4">
-                <div class="flex rounded-md shadow-sm">
-                    <div class="relative flex flex-grow items-stretch focus-within:z-10">
-                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                            <MagnifyingGlassIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+    <div class="ln-relative ln-h-full">
+        <div class="ln-mt-3 ln-flex-1 ln-px-4 ln-sm:ln-px-6" v-show="!mediaDetail">
+            <div class="ln-mb-2 ln-pr-4">
+                <div class="ln-flex ln-rounded-md ln-shadow-sm">
+                    <div class="ln-relative ln-flex ln-flex-grow ln-items-stretch ln-focus-within:ln-z-10">
+                        <div
+                            class="ln-pointer-events-none ln-absolute ln-inset-y-0 ln-left-0 ln-flex ln-items-center ln-pl-3">
+                            <MagnifyingGlassIcon class="ln-h-5 ln-w-5 ln-text-gray-400" aria-hidden="true" />
                         </div>
-                        <input type="search" class="w-full form-control form-input form-control-bordered"
+                        <input type="search" class="ln-w-full form-control form-input form-control-bordered"
                             style="text-indent: 1.5rem;" @input.debounce="fetchMediaData($event.target.value)"
                             placeholder="Search Media Library" />
                     </div>
                 </div>
             </div>
-            <div class="overflow-y-auto h-full pr-4" style="max-height: 85dvh;">
-                <div class="grid pb-4">
+            <div class="ln-overflow-y-auto ln-h-full ln-pr-4" style="max-height: 85dvh;">
+                <div class="ln-grid pb-4">
                     <span v-if="loading">Loading</span>
-                    <div v-else class="grid grid-cols-3 gap-4">
+                    <div v-else class="ln-grid ln-grid-cols-3 ln-gap-4">
                         <template v-for="media in getMediaData" :key="media.id">
                             <image-card :multiple="!!field.multiple" v-model="selected" :media="media"
                                 @onOpen="onDetail($event)" />
@@ -129,13 +130,14 @@ const onChoose = () => {
         <image-detail v-if="mediaDetail && !loadingDetail" :media="mediaDetail" :resourceName="resourceName"
             :resourceId="resourceId" :field="field" @onUpdate="onUpdate" />
 
-        <div v-if="selected.length > 0 && !mediaDetail" class="absolute bottom-5 w-full p-4" style="z-index: 100;">
+        <div v-if="selected.length > 0 && !mediaDetail" class="ln-absolute ln-bottom-5 ln-w-full ln-p-4"
+            style="z-index: 100;">
             <div
-                class="bg-white w-full max-w-sm mx-auto border gap-x-4 border-gray-200 py-1.5 rounded-lg px-2.5 gap-x-4 flex flex-row items-center justify-between">
-                <DefaultButton class="bg-primary-500 w-full" @click.prevent.stop="onChoose">
+                class="ln-bg-white ln-w-full ln-max-w-sm ln-mx-auto ln-border ln-gap-x-4 ln-border-gray-200 ln-py-1.5 ln-rounded-lg ln-px-2.5 ln-gap-x-4 ln-flex ln-flex-row ln-items-center ln-justify-between">
+                <DefaultButton class="ln-bg-primary-500 ln-w-full" @click.prevent.stop="onChoose">
                     Choose
                 </DefaultButton>
-                <CancelButton class="w-full" @click.prevent.stop="onCancel">
+                <CancelButton class="ln-w-full" @click.prevent.stop="onCancel">
                     Cancel
                 </CancelButton>
             </div>

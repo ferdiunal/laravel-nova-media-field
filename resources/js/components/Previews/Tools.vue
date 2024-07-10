@@ -1,8 +1,8 @@
 <script setup>
+import { computed, defineEmits } from 'vue';
 import GridButton from "../Buttons/GridButton.vue";
 import ListButton from '../Buttons/ListButton.vue';
 import TwoColumnButton from '../Buttons/TwoColumnButton.vue';
-import { computed, watch, defineEmits, defineProps } from 'vue';
 
 const emit = defineEmits(['update:modelValue'])
 
@@ -13,7 +13,7 @@ const listType = computed({
 
 </script>
 <template>
-    <div class="inline-flex flex-row gap-x-2.5">
+    <div class="ln-inline-flex ln-flex-row ln-gap-x-2.5">
         <GridButton v-model="listType" />
         <TwoColumnButton v-model="listType" />
         <ListButton v-model="listType" />

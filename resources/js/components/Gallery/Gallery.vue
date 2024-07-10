@@ -136,19 +136,19 @@ export default {
 }
 </script>
 <template>
-    <div :id="id" class="flex items-center group" @click.prevent.stop="onOpen">
-        <div class="flex overflow-hidden" :class="{
-            '-space-x-3': resourceView === 'index',
-            '-space-x-5': resourceView === 'detail'
+    <div :id="id" class="ln-flex ln-items-center ln-group" @click.prevent.stop="onOpen">
+        <div class="ln-flex ln-overflow-hidden" :class="{
+            '-ln-space-x-3': resourceView === 'index',
+            '-ln-space-x-5': resourceView === 'detail'
         }">
             <gallery-item :resourceView="resourceView" v-for="(file, index) in files" :key="index" :index="index"
                 :file="file" />
         </div>
         <div @click="onOpen" v-if="files.length > 2"
-            class="select-none text-xs rounded-full ring-2 ring-white inline-flex items-center justify-center bg-gray-50 text-gray-600 cursor-pointerxw"
+            class="ln-select-none ln-text-xs ln-rounded-full ln-ring-2 ln-ring-white ln-inline-flex ln-items-center ln-justify-center ln-bg-gray-50 ln-text-gray-600 ln-cursor-pointerxw"
             :class="{
-                'h-6 w-6 -ml-3': resourceView === 'index',
-                'h-8 w-8 -ml-5': resourceView === 'detail'
+                'ln-h-6 ln-w-6 -ln-ml-3': resourceView === 'index',
+                'ln-h-8 ln-w-8 -ln-ml-5': resourceView === 'detail'
             }">
             +{{ files.length - 2 }}
         </div>

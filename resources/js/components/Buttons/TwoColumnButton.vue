@@ -15,10 +15,10 @@ const value = computed({
 <template>
     <button type="button" @click.prevent.stop="value = 'two-column'"
         v-tooltip="{ content: __('Two Column View'), delay: { show: 1, hide: 0 } }"
-        class="cursor-pointer rounded text-sm font-bold inline-flex items-center justify-center focus:outline-none focus:ring border-2 w-6 h-6"
-        :class="value === 'two-column' ? 'border-primary-300 dark:border-gray-500 hover:border-primary-500 active:border-primary-400 dark:hover:border-gray-400 dark:active:border-gray-300 ring-primary-200 dark:ring-gray-600' : 'border-transparent'">
+        class="ln-cursor-pointer ln-rounded ln-text-sm ln-font-bold ln-inline-flex ln-items-center ln-justify-center ln-focus:ln-outline-none ln-focus:ln-ring ln-border-2 ln-w-8 ln-p-1 ln-h-8"
+        :class="value === 'two-column' ? 'ln-border-primary-300 ln-dark:border-gray-500 ln-hover:border-primary-500 ln-active:border-primary-400 ln-dark:hover:border-gray-400 ln-dark:active:border-gray-300 ln-ring-primary-200 ln-dark:ring-gray-600' : 'ln-border-transparent'">
         <svg class="w-3.5 h-5 stroke-current"
-            :class="value === 'two-column' ? 'text-primary-500 dark:text-gray-400' : 'text-gray-400 dark:text-gray-400'"
+            :class="value === 'two-column' ? 'ln-text-primary-500 ln-dark:ln-text-gray-400' : 'ln-text-gray-400 ln-dark:ln-text-gray-400'"
             viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M6.5 3C4.94444 3 3.58333 3.5 3.38889 4C3.19444 4.5 3 8 3 12C3 16 3.19444 19.5 3.38889 20C3.58333 20.5 4.94444 21 6.5 21C8.05556 21 9.41667 20.5 9.61111 20C9.80556 19.5 10 16 10 12C10 8 9.80556 4.5 9.61111 4C9.41667 3.5 8.05556 3 6.5 3Z"

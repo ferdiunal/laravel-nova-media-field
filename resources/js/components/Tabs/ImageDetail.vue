@@ -44,46 +44,47 @@ const isImage = computed(() => mediaDetail.value.mime_type.startsWith('image'))
 </script>
 
 <template>
-    <div class="absolute z-50 mt-1.5 inset-0 bg-white flex flex-col py-1.5" style="height: 100dvb;">
+    <div class="ln-absolute ln-z-50 ln-mt-1.5 ln-inset-0 ln-bg-white ln-flex ln-flex-col ln-py-1.5 h-dvh">
         <div>
-            <div class="flex flex-row items-center gap-x-2.5 py-2.5 px-3.5 border-b border-gray-100">
+            <div
+                class="ln-flex ln-flex-row ln-items-center ln-gap-x-2.5 ln-py-2.5 ln-px-3.5 ln-border-b ln-border-gray-100">
                 <Button @click="onCloseDetail">
-                    <ArrowLeftIcon class="h-5 w-5" aria-hidden="true" />
+                    <ArrowLeftIcon class="ln-h-5 ln-w-5" aria-hidden="true" />
                 </Button>
-                <span class="font-normal text-lg truncate">
+                <span class="ln-font-normal ln-text-lg ln-truncate">
                     {{ mediaDetail?.name?.length ? mediaDetail?.name : "No Name" }}</span>
             </div>
         </div>
-        <div class="overflow-y-auto h-full px-6 pt-3.5 pb-8" style="max-height: 88dvh;">
-            <div class="flex flex-col gap-y-1.5">
+        <div class="ln-overflow-y-auto ln-h-full ln-px-6 ln-pt-3.5 ln-pb-8" style="max-height: 88dvh;">
+            <div class="ln-flex ln-flex-col ln-gap-y-1.5">
                 <template v-if="isImage">
                     <img :src="mediaDetail?.src" :srcset="mediaDetail?.srcset" :alt="mediaDetail?.name"
-                        class="w-full max-w-xs mx-auto rounded-md mb-4" />
+                        class="ln-w-full ln-max-w-xs ln-mx-auto ln-rounded-md ln-mb-4" />
                 </template>
                 <template v-else>
-                    <div class="max-w-xs mx-auto mb-4">
+                    <div class="ln-max-w-xs ln-mx-auto ln-mb-4">
                         <div
-                            class="rounded-md bg-gray-200 w-full h-full border-2 inline-flex justify-center items-center border-gray-200 p-4">
+                            class="ln-rounded-md ln-bg-gray-200 ln-w-full ln-h-full ln-border-2 ln-inline-flex ln-justify-center ln-items-center ln-border-gray-200 ln-p-4">
                             <Icon type="document-text" width="180" height="180" />
                         </div>
                     </div>
                 </template>
-                <div class="flex flex-col gap-y-4">
-                    <div class="grid grid-cols-8 items-start">
-                        <span class="font-bold col-span-3">File Name:</span>
-                        <span class="text-sm col-span-5">{{ mediaDetail?.file_name }}</span>
+                <div class="ln-flex ln-flex-col ln-gap-y-4">
+                    <div class="ln-grid ln-grid-cols-8 ln-items-start">
+                        <span class="ln-font-bold ln-col-span-3">File Name:</span>
+                        <span class="text-sm ln-col-span-5">{{ mediaDetail?.file_name }}</span>
                     </div>
-                    <div class="grid grid-cols-8 items-center">
-                        <span class="font-bold col-span-3">File Type:</span>
-                        <span class="text-sm col-span-5">{{ mediaDetail?.mime_type }}</span>
+                    <div class="ln-grid ln-grid-cols-8 ln-items-center">
+                        <span class="ln-font-bold ln-col-span-3">File Type:</span>
+                        <span class="text-sm ln-col-span-5">{{ mediaDetail?.mime_type }}</span>
                     </div>
-                    <div class="grid grid-cols-8 items-center">
-                        <span class="font-bold col-span-3">File Size:</span>
-                        <span class="text-sm col-span-5">{{ formatBytes(mediaDetail?.size) }}</span>
+                    <div class="ln-grid ln-grid-cols-8 ln-items-center">
+                        <span class="ln-font-bold ln-col-span-3">File Size:</span>
+                        <span class="text-sm ln-col-span-5">{{ formatBytes(mediaDetail?.size) }}</span>
                     </div>
-                    <div class="grid grid-cols-8 items-center">
-                        <span class="font-bold col-span-3">Last modification:</span>
-                        <span class="text-sm col-span-5" v-tooltip="{
+                    <div class="ln-grid ln-grid-cols-8 ln-items-center">
+                        <span class="ln-font-bold ln-col-span-3">Last modification:</span>
+                        <span class="text-sm ln-col-span-5" v-tooltip="{
                             content: mediaDetail?.updated_at,
                             delay: {
                                 show: 1,
@@ -93,9 +94,9 @@ const isImage = computed(() => mediaDetail.value.mime_type.startsWith('image'))
                             mediaDetail?.readable_updated_at
                             }}</span>
                     </div>
-                    <div class="grid grid-cols-8 items-center">
-                        <span class="font-bold col-span-3">Upload Date:</span>
-                        <span class="text-sm col-span-5" v-tooltip="{
+                    <div class="ln-grid ln-grid-cols-8 ln-items-center">
+                        <span class="font-bold ln-col-span-3">Upload Date:</span>
+                        <span class="text-sm ln-col-span-5" v-tooltip="{
                             content: mediaDetail?.created_at,
                             delay: {
                                 show: 1,
@@ -105,47 +106,48 @@ const isImage = computed(() => mediaDetail.value.mime_type.startsWith('image'))
                             mediaDetail?.readable_created_at
                             }}</span>
                     </div>
-                    <div class="grid grid-cols-8 items-center">
-                        <span class="font-bold col-span-3">Collection:</span>
-                        <span class="text-sm col-span-5">{{ mediaDetail?.collection_name }}</span>
+                    <div class="ln-grid ln-grid-cols-8 ln-items-center">
+                        <span class="ln-font-bold ln-col-span-3">Collection:</span>
+                        <span class="ln-text-sm ln-col-span-5">{{ mediaDetail?.collection_name }}</span>
                     </div>
-                    <div class="grid grid-cols-8 items-center">
-                        <span class="font-bold col-span-3">Disk:</span>
-                        <span class="text-sm col-span-5">{{ mediaDetail?.disk }}</span>
+                    <div class="ln-grid ln-grid-cols-8 ln-items-center">
+                        <span class="ln-font-bold ln-col-span-3">Disk:</span>
+                        <span class="ln-text-sm ln-col-span-5">{{ mediaDetail?.disk }}</span>
                     </div>
-                    <div class="grid grid-cols-8 items-center">
-                        <span class="font-bold col-span-3">URL:</span>
-                        <input class="w-full col-span-5 form-control form-input form-control-bordered"
+                    <div class="ln-grid ln-grid-cols-8 ln-items-center">
+                        <span class="ln-font-bold ln-col-span-3">URL:</span>
+                        <input class="ln-w-full ln-col-span-5 form-control form-input form-control-bordered"
                             :value="mediaDetail?.src" readonly @click="onSelect" />
                     </div>
                 </div>
             </div>
 
-            <div class="flex flex-col mt-5 gap-y-4">
+            <div class="ln-flex ln-flex-col ln-mt-5 ln-gap-y-4">
                 <div>
-                    <label for="name" class="block text-sm font-medium leading-6 text-gray-900">
+                    <label for="name" class="ln-block ln-text-sm ln-font-medium ln-leading-6 ln-text-gray-900">
                         File Name
                     </label>
-                    <div class="mt-2">
-                        <input id="name" class="w-full form-control form-input form-control-bordered"
+                    <div class="ln-mt-2">
+                        <input id="name" class="ln-w-full form-control form-input form-control-bordered"
                             v-model="formName" />
                     </div>
                 </div>
                 <div v-if="isImage">
-                    <label for="altText" class="block text-sm font-medium leading-6 text-gray-900">
+                    <label for="altText" class="ln-block ln-text-sm ln-font-medium ln-leading-6 ln-text-gray-900">
                         Alt Text
                     </label>
-                    <div class="mt-2">
-                        <input id="altText" class="w-full form-control form-input form-control-bordered"
+                    <div class="ln-mt-2">
+                        <input id="altText" class="ln-w-full form-control form-input form-control-bordered"
                             v-model="formAltText" />
                     </div>
                 </div>
-                <div class="flex flex-row items-center justify-between gap-x-4">
-                    <DefaultButton :disabled="!mediaDetail?.name.length" class="bg-primary-500 w-full"
-                        :class="[!mediaDetail?.name.length ? 'cursor-not-allowed opacity-50' : '']" @click="onUpdate">
+                <div class="ln-flex ln-flex-row ln-items-center ln-justify-between ln-gap-x-4">
+                    <DefaultButton :disabled="!mediaDetail?.name.length" class="ln-bg-primary-500 ln-w-full"
+                        :class="[!mediaDetail?.name.length ? 'ln-cursor-not-allowed ln-opacity-50' : '']"
+                        @click="onUpdate">
                         Save
                     </DefaultButton>
-                    <CancelButton type="button" class="border border-gray-50 w-full" @click="onCloseDetail">
+                    <CancelButton type="button" class="ln-border ln-border-gray-50 ln-w-full" @click="onCloseDetail">
                         Back
                     </CancelButton>
                 </div>

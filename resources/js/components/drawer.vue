@@ -29,8 +29,8 @@ const onOpen = async () => {
 </script>
 
 <template>
-    <div class="grid">
-        <div class="flex flex-row justify-between items-center">
+    <div class="ln-grid">
+        <div class="ln-flex ln-flex-row ln-justify-between ln-items-center ln-pb-4">
             <OutlineButton type="button" @click.prevent="onOpen">
                 {{ __('nova-media_field_label') }}
             </OutlineButton>
@@ -40,35 +40,39 @@ const onOpen = async () => {
         <previews-container :field="field" :files="files" />
     </div>
     <TransitionRoot as="template" :show="open">
-        <Dialog class="relative z-50" @close="onClose">
-            <TransitionChild as="template" enter="ease-in-out duration-500" enter-from="opacity-0"
-                enter-to="opacity-100" leave="ease-in-out duration-500" leave-from="opacity-100" leave-to="opacity-0">
-                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+        <Dialog class="ln-relative ln-z-50" @close="onClose">
+            <TransitionChild as="template" enter="ln-ease-in-out ln-duration-500" enter-from="ln-opacity-0"
+                enter-to="ln-opacity-100" leave="ln-ease-in-out ln-duration-500" leave-from="ln-opacity-100"
+                leave-to="ln-opacity-0">
+                <div class="ln-fixed ln-inset-0 ln-bg-gray-500 ln-bg-opacity-75 ln-transition-opacity" />
             </TransitionChild>
 
-            <div class="fixed inset-0 overflow-hidden">
-                <div class="absolute inset-0 overflow-hidden">
-                    <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+            <div class="ln-fixed ln-inset-0 ln-overflow-hidden">
+                <div class="ln-absolute ln-inset-0 ln-overflow-hidden">
+                    <div class="ln-pointer-events-none ln-fixed ln-inset-y-0 ln-right-0 ln-flex ln-max-w-full ln-pl-10">
                         <TransitionChild as="template"
-                            enter="transform transition ease-in-out duration-500 sm:duration-700"
-                            enter-from="translate-x-full" enter-to="translate-x-0"
-                            leave="transform transition ease-in-out duration-500 sm:duration-700"
-                            leave-from="translate-x-0" leave-to="translate-x-full">
-                            <DialogPanel class="pointer-events-auto relative w-screen max-w-2xl">
-                                <TransitionChild as="template" enter="ease-in-out duration-500" enter-from="opacity-0"
-                                    enter-to="opacity-100" leave="ease-in-out duration-500" leave-from="opacity-100"
-                                    leave-to="opacity-0">
-                                    <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
+                            enter="ln-transform ln-transition ln-ease-in-out ln-duration-500 sm:ln-duration-700"
+                            enter-from="ln-translate-x-full" enter-to="ln-translate-x-0"
+                            leave="ln-transform ln-transition ln-ease-in-out ln-duration-500 sm:ln-duration-700"
+                            leave-from="ln-translate-x-0" leave-to="ln-translate-x-full">
+                            <DialogPanel class="ln-pointer-events-auto ln-relative ln-w-screen ln-max-w-2xl">
+                                <TransitionChild as="template" enter="ln-ease-in-out ln-duration-500"
+                                    enter-from="ln-opacity-0" enter-to="ln-opacity-100"
+                                    leave="ln-ease-in-out ln-duration-500" leave-from="ln-opacity-100"
+                                    leave-to="ln-opacity-0">
+                                    <div
+                                        class="ln-absolute ln-left-0 ln-top-0 -ln-ml-8 ln-flex ln-pr-2 ln-pt-4 ln-sm:-ln-ml-10 ln-sm:ln-pr-4">
                                         <button type="button"
-                                            class="relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+                                            class="ln-relative ln-rounded-md ln-text-gray-300 ln-hover:ln-text-white ln-focus:ln-outline-none ln-focus:ln-ring-2 ln-focus:ln-ring-white"
                                             @click="onClose">
-                                            <span class="absolute -inset-2.5" />
+                                            <span class="ln-absolute -ln-inset-2.5" />
                                             <span class="sr-only">Close panel</span>
-                                            <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+                                            <XMarkIcon class="ln-h-6 ln-w-6" aria-hidden="true" />
                                         </button>
                                     </div>
                                 </TransitionChild>
-                                <div class="flex h-full flex-col overflow-hidden bg-white dark:bg-gray-800 shadow-xl">
+                                <div
+                                    class="ln-flex ln-h-full ln-flex-col ln-overflow-hidden ln-bg-white ln-dark:ln-bg-gray-800 ln-shadow-xl">
                                     <slot />
                                 </div>
                             </DialogPanel>

@@ -6,13 +6,13 @@ const props = defineProps(['field', 'files'])
 const listType = computed(() => window.NovaMedia.state("drawer").listType)
 
 const gridClass = computed(() => {
-    const $class = "grid transition-all mt-3.5 duration-300 ease-in-out delay-75"
+    const $class = "ln-grid ln-transition-all ln-mt-3.5 ln-duration-300 ln-ease-in-out ln-delay-75"
     if (props.field?.multiple && listType.value === 'grid') {
-        return cn($class, 'grid-cols-4 gap-6')
+        return cn($class, 'ln-grid-cols-4 ln-gap-6')
     } else if (listType.value === 'two-column') {
-        return cn($class, 'grid-cols-2 gap-6')
+        return cn($class, 'ln-grid-cols-2 ln-gap-6')
     } else {
-        return cn($class, 'grid-cols-1 gap-6 max-w-sm')
+        return cn($class, 'ln-grid-cols-1 ln-gap-6 ln-max-w-sm')
     }
 })
 
