@@ -11,6 +11,11 @@
   scroll-snap-type: mandatory;
   scroll-snap-stop: always;
 }
+.pswp__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .pswp__pdf-content,
 .pswp__img-content,
 .pswp__video-content,
