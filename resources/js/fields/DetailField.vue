@@ -1,7 +1,7 @@
 <template>
     <PanelItem :index="index" :field="field">
         <template v-slot:value>
-            <gallery :files="files" v-if="files.length" :id="`gallery-${resource.id.value}`" resourceView="detail" />
+            <gallery :files="files" v-if="files.length" :id="`gallery_${resource.id.value}`" resourceView="detail" />
             <span v-else>—</span>
         </template>
     </PanelItem>

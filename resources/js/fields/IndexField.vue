@@ -1,6 +1,6 @@
 <template>
     <span>
-        <gallery :files="files" v-if="files.length" :id="`gallery-${resource.id.value}`" resourceView="index" />
+        <gallery :files="files" v-if="files.length" :id="`gallery_${resource.id.value}`" resourceView="index" />
         <span v-else>—</span>
     </span>
 </template>

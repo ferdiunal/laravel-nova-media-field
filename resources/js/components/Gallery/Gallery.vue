@@ -24,7 +24,7 @@ export default {
     },
     computed: {
         hash() {
-            const hash = this.files.map((file) => file.id).join('_');
+            const hash = this.files.filter((_, i) => i < 3).map((file) => file.id).join('_');
 
             return `${this.id}-${hash}`
         },
@@ -33,7 +33,7 @@ export default {
         this.$nextTick(() => {
             if (!this.lightbox) {
                 this.lightbox = new PhotoSwipeLightbox({
-                    gallery: '#' + this.$props.id,
+                    gallery: '#' + this.hash,
                     showHideAnimationType: 'fade',
                     children: 'a',
                     pswpModule: PhotoSwipe,
@@ -137,7 +137,7 @@ export default {
     },
     methods: {
         onOpen() {
-            document.querySelectorAll(`#${this.hash} a`)?.[0].click();
+            document.querySelector(`#${this.hash} a`)?.click();
         }
     }
 }
