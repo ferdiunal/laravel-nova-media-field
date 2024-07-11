@@ -22,6 +22,13 @@ export default {
             lightbox: null,
         }
     },
+    computed: {
+        hash() {
+            const hash = this.files.map((file) => file.id).join('_');
+
+            return `${this.id}-${hash}`
+        },
+    },
     mounted() {
         this.$nextTick(() => {
             if (!this.lightbox) {
@@ -130,13 +137,13 @@ export default {
     },
     methods: {
         onOpen() {
-            document.querySelectorAll(`#${this.id} a`)?.[0].click();
+            document.querySelectorAll(`#${this.hash} a`)?.[0].click();
         }
     }
 }
 </script>
 <template>
-    <div :id="id" class="ln-flex ln-items-center ln-group" @click.prevent.stop="onOpen">
+    <div :id="hash" class="ln-flex ln-items-center ln-group" @click.prevent.stop="onOpen">
         <div class="ln-flex ln-overflow-hidden" :class="{
             '-ln-space-x-3': resourceView === 'index',
             '-ln-space-x-5': resourceView === 'detail'
