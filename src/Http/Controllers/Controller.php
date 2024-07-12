@@ -21,7 +21,7 @@ class Controller extends BaseController
      * @param  \Laravel\Nova\Fields\Field&\Laravel\Nova\Contracts\Deletable  $field
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public static function forRequest(NovaRequest $request, $field, Model $model, string $mediaId, Closure $callback = null)
+    public static function forRequest(NovaRequest $request, $field, Model $model, string $mediaId, ?Closure $callback = null)
     {
         $arguments = [
             $request,
