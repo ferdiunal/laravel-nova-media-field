@@ -1,0 +1,3 @@
+*.vue linguist-detectable=false
+*.js linguist-detectable=true
+*.php linguist-detectable=true
