@@ -33,7 +33,7 @@ const onOpen = () => {
 const isImage = computed(() => props.media.mime_type.startsWith('image'))
 </script>
 <template>
-    <div class="ln-col-span-1 ln-bg-gray-50 ln-dark:ln-bg-gray-700 ln-relative ln-items-center ln-justify-center ln-border-2 ln-rounded-md ln-transition-colors ln-delay-150 ln-ease-in-out ln-duration-75 ln-flex ln-flex-col ln-items-center ln-group ln-overflow-hidden"
+    <div class="ln-col-span-1 ln-bg-gray-50 ln-dark:ln-bg-gray-700 ln-relative ln-justify-center ln-border-2 ln-rounded-md ln-transition-colors ln-delay-150 ln-ease-in-out ln-duration-75 ln-flex ln-flex-col ln-items-center ln-group ln-overflow-hidden"
         :class="modelValue.some(r => r.id === media?.id) ? 'ln-hover:ln-border-primary-600 ln-border-primary-500' : 'ln-hover:ln-border-gray-400 ln-dark:ln-hover:ln-border-gray-800 ln-border-gray-200 ln-dark:ln-border-gray-700'">
         <div class="ln-mb-4 ln-px-4">
             <template v-if="isImage">
