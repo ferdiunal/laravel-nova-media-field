@@ -22,19 +22,19 @@ class NovaMediaFieldServiceProvider extends ServiceProvider
         });
 
         Nova::serving(function (ServingNova $event) {
-            Nova::script('nova-media', realpath(__DIR__ . '/../dist/js/field.js'));
-            Nova::style('nova-media', realpath(__DIR__ . '/../dist/css/field.css'));
+            Nova::script('nova-media', realpath(__DIR__.'/../dist/js/field.js'));
+            Nova::style('nova-media', realpath(__DIR__.'/../dist/css/field.css'));
             $this->translations();
         });
     }
 
     private function translations()
     {
-        $translate = realpath(__DIR__ . sprintf('/../lang/%s/nova-media.json', $this->app->getLocale()));
+        $translate = realpath(__DIR__.sprintf('/../lang/%s/nova-media.json', $this->app->getLocale()));
         if (File::exists($translate)) {
             Nova::translations($translate);
         } else {
-            Nova::translations(realpath(__DIR__ . '/../lang/en/nova-media.json'));
+            Nova::translations(realpath(__DIR__.'/../lang/en/nova-media.json'));
         }
     }
 
@@ -46,7 +46,7 @@ class NovaMediaFieldServiceProvider extends ServiceProvider
 
         Route::middleware(['nova'])
             ->prefix('nova-vendor/ferdiunal/laravel-nova-media-field')
-            ->group(__DIR__ . '/../routes/api.php');
+            ->group(__DIR__.'/../routes/api.php');
     }
 
     /**
