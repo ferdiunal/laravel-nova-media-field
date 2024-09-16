@@ -133,7 +133,7 @@ const onChoose = () => {
         <div v-if="selected.length > 0 && !mediaDetail" class="ln-absolute ln-bottom-5 ln-w-full ln-p-4"
             style="z-index: 100;">
             <div
-                class="ln-bg-white ln-w-full ln-max-w-sm ln-mx-auto ln-border ln-gap-x-4 ln-border-gray-200 ln-py-1.5 ln-rounded-lg ln-px-2.5 ln-gap-x-4 ln-flex ln-flex-row ln-items-center ln-justify-between">
+                class="ln-bg-white ln-w-full ln-max-w-sm ln-mx-auto ln-border ln-border-gray-200 ln-py-1.5 ln-rounded-lg ln-px-2.5 ln-gap-x-4 ln-flex ln-flex-row ln-items-center ln-justify-between">
                 <DefaultButton class="ln-bg-primary-500 ln-w-full" @click.prevent.stop="onChoose">
                     Choose
                 </DefaultButton>

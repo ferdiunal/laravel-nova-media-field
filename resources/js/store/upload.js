@@ -147,6 +147,7 @@ export default {
     renameFile(state, { file, name }) {
       const files = [...state.files]
       const index = files.findIndex(f => f.mediaId === file.id)
+      if (index === -1) return
       files[index].name = name
       files[index].file_name = `${name}.${_file.extension}`
       state.files = files
@@ -242,10 +243,10 @@ export default {
           commit('setFiles', files)
         })
         .catch(error => {
-          console.log(error)
           if (error.response.status === 403) {
+            const msg= 'Sorry! You are not authorized to perform this action.'
             Nova.error(
-              this.__('Sorry! You are not authorized to perform this action.')
+              Nova.config('translations')[msg] ?? msg
             )
           }
         })

@@ -1,8 +1,8 @@
 <script setup>
-import { useLocalization } from 'laravel-nova-useLocalization';
 import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from '@headlessui/vue';
 import { XMarkIcon } from '@heroicons/vue/20/solid';
-import { computed, defineProps, ref, watch } from 'vue';
+import { useLocalization } from 'laravel-nova-useLocalization';
+import { computed, defineProps } from 'vue';
 
 const { __ } = useLocalization()
 
@@ -20,7 +20,7 @@ const files = computed(() => {
 
     return [...previewFiles, ...files]?.sort((a, b) => a.order - b.order).filter(file => !file.hide)
 })
-const onClose = () => {
+const onClose = (e) => {
     window.NovaMedia.commit("drawer", "close")
 }
 const onOpen = async () => {
@@ -40,12 +40,12 @@ const onOpen = async () => {
         <previews-container :field="field" :files="files" />
     </div>
     <TransitionRoot as="template" :show="open">
-        <Dialog class="ln-relative ln-z-50" @close="onClose">
-            <TransitionChild as="template" enter="ln-ease-in-out ln-duration-500" enter-from="ln-opacity-0"
+        <Dialog class="ln-relative ln-z-50">
+            <!-- <TransitionChild as="template" enter="ln-ease-in-out ln-duration-500" enter-from="ln-opacity-0"
                 enter-to="ln-opacity-100" leave="ln-ease-in-out ln-duration-500" leave-from="ln-opacity-100"
                 leave-to="ln-opacity-0">
-                <div class="ln-fixed ln-inset-0 ln-bg-gray-500 ln-bg-opacity-75 ln-transition-opacity" />
-            </TransitionChild>
+                <div class="ln-fixed ln-inset-0 ln-bg-gray-400/40 ln-transition-opacity"  @close="onClose"/>
+            </TransitionChild> -->
 
             <div class="ln-fixed ln-inset-0 ln-overflow-hidden">
                 <div class="ln-absolute ln-inset-0 ln-overflow-hidden">

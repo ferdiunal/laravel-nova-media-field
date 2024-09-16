@@ -85,9 +85,7 @@ export default {
   },
   actions: {
     async fetchLoadMore({ commit, state }) {
-      if (state.fetchLoadMoreCanceller) {
-        state.fetchLoadMoreCanceller.value()
-      }
+      state.fetchLoadMoreCanceller?.()
 
       try {
         const request = await Nova.request().get(state.media.links.next, {
@@ -110,9 +108,7 @@ export default {
       { commit, state },
       { resourceName, resourceId, attribute, id }
     ) {
-      if (state.fetchMediaDetailCanceller !== undefined) {
-        await state.fetchMediaDetailCanceller()
-      }
+      state.fetchMediaDetailCanceller?.()
       if (!id) {
         return
       }
@@ -147,9 +143,7 @@ export default {
       }
     },
     async fetchMediaData({ state, commit }, s = undefined) {
-      if (state.fetchMediaCanceller !== undefined) {
-        state.fetchMediaCanceller.value()
-      }
+      state.fetchMediaCanceller?.()
 
       if (s && s.length < 3) {
         return

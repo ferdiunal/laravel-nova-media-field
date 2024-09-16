@@ -1,27 +1,27 @@
 import App from './app'
-import LibraryStore from './store/library'
 import DrawerStore from './store/drawer'
+import LibraryStore from './store/library'
 import UploadStore from './store/upload'
 
-import IndexField from './fields/IndexField.vue'
 import DetailField from './fields/DetailField.vue'
 import FormField from './fields/FormField.vue'
+import IndexField from './fields/IndexField.vue'
 
 import Drawer from './components/drawer.vue'
 import UploadField from './components/UploadField.vue'
 
-import Tabs from './components/Tabs/Tabs.vue'
-import UploadTab from './components/Tabs/UploadTab.vue'
-import LibraryTab from './components/Tabs/LibraryTab.vue'
 import ImageCard from './components/Tabs/ImageCard.vue'
 import ImageDetail from './components/Tabs/ImageDetail.vue'
+import LibraryTab from './components/Tabs/LibraryTab.vue'
+import Tabs from './components/Tabs/Tabs.vue'
+import UploadTab from './components/Tabs/UploadTab.vue'
 
-import RowPreview from './components/Previews/Row.vue'
-import BlockPreview from './components/Previews/Block.vue'
 import Gallery from './components/Gallery/Gallery.vue'
 import GalleryItem from './components/Gallery/GalleryItem.vue'
+import BlockPreview from './components/Previews/Block.vue'
 import Preview from './components/Previews/Preview.vue'
 import PreviewsContainer from './components/Previews/PreviewsContainer.vue'
+import RowPreview from './components/Previews/Row.vue'
 import Tools from './components/Previews/Tools.vue'
 
 Nova.booting((app, store) => {
